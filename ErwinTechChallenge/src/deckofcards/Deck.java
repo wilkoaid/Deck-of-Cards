@@ -22,6 +22,9 @@ public class Deck {
 		return deck;
 	}
 	
+	/**
+	 * Clears the deck and deals a new one.
+	 */
 	public void reset() {
 		this.deck.clear();
 		for(Suit suit : Suit.values()) {
@@ -31,6 +34,9 @@ public class Deck {
 		}
 	}
 
+	/**
+	 * Shuffles the order of the deck of Cards.
+	 */
 	public void shuffleDeck() {
 		List<Card> shuffled = new ArrayList<>();
 		int i = 0;
@@ -46,6 +52,11 @@ public class Deck {
 		this.deck = shuffled;
 	}
 	
+	/**
+	 * Draws a given number of cards from the deck.
+	 * @param n Number of cards to draw.
+	 * @return n number of cards from the top of the deck.
+	 */
 	public List<Card> draw(int n) {
 		List<Card> cards = new ArrayList<>();
 		for(int i=0; i<n; i++) {
@@ -57,6 +68,11 @@ public class Deck {
 		return cards;
 	}
 	
+	/**
+	 * Takes a list of cards and outputs them sorted by suit then rank (Ace high).
+	 * @param cards List of cards to sort.
+	 * @return Sorted list of cards.
+	 */
 	public List<Card> sortCards(List<Card> cards) {
 		Collections.sort(cards, (o1,o2) -> {
 			if(o1.getSuit().getValue() > o2.getSuit().getValue()) {

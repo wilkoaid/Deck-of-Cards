@@ -68,7 +68,6 @@ public class Controller extends BorderPane {
 				handList.setItems(handCards);
 			});
 			
-			
 			resetButton.setOnMouseClicked(e -> {
 				deck.reset();
 				setDeckList();
