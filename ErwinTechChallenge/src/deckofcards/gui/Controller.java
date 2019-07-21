@@ -2,6 +2,7 @@ package deckofcards.gui;
 
 import java.io.IOException;
 
+import deckofcards.Card;
 import deckofcards.Deck;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,8 +17,8 @@ import javafx.stage.Stage;
 public class Controller extends BorderPane {
 	private Stage stage;
 	private Deck deck;
-	private ObservableList deckCards = FXCollections.observableArrayList();
-	private ObservableList handCards = FXCollections.observableArrayList();
+	private ObservableList<Card> deckCards = FXCollections.observableArrayList();
+	private ObservableList<Card> handCards = FXCollections.observableArrayList();
 	
 	@FXML private Button shuffleButton;
 	@FXML private Button drawButton;
@@ -25,8 +26,8 @@ public class Controller extends BorderPane {
 	@FXML private Button resetButton;
 	@FXML private Button quitButton;
 	@FXML private TextField numDrawField;
-	@FXML private ListView deckList;
-	@FXML private ListView handList;
+	@FXML private ListView<Card> deckList;
+	@FXML private ListView<Card> handList;
 	
 	public Controller(Stage stage) {
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("View.fxml"));
