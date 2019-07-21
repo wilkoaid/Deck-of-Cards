@@ -1,6 +1,7 @@
 package deckofcards;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -37,11 +38,37 @@ public class Deck {
 	}
 	
 	public List<Card> draw(int n) {
-		return deck;
+		List<Card> cards = new ArrayList<>();
+		if(this.deck.size() < n) {
+			throw new IllegalArgumentException("Too few cards in deck to draw " + n);
+		} else {
+			for(int i=0; i<n; i++) {
+				Card topCard = this.deck.remove(this.deck.size() - 1);
+				cards.add(topCard);
+			}			
+		}
+		return cards;
 	}
 	
 	public List<Card> drawSorted(int n) {
-		return deck;
+		List<Card> cards = new ArrayList<>();
+		cards = draw(n);
+		Collections.sort(cards, (o1,o2) -> {
+			if(o1.getSuit().getValue() > o2.getSuit().getValue()) {
+				return 1;
+			} else if (o1.getSuit().getValue() < o2.getSuit().getValue()) {
+				return -1;
+			} else { // equal suit
+				if(o1.getValue().getValue() > o2.getValue().getValue()) {
+					return 1;
+				} else if (o1.getValue().getValue() < o2.getValue().getValue()) {
+					return -1;
+				} else {
+					return 0;
+				}
+			}
+		});
+		return cards;
 	}
 	
 	

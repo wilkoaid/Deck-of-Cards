@@ -19,6 +19,10 @@ public class Main {
 			i++;
 		}
 		System.out.println(i);
+		
+		
+		System.out.println(deck.draw(4));
+		System.out.println(deck.drawSorted(10));
 	}
 
 }

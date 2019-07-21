@@ -21,7 +21,9 @@ public class Tests {
 		assertEquals(expected,actual);
 	}
 
-	
+	/*
+	 * test the draw method
+	 */
 	@Test
 	public void test2() {
 		Deck deck = new Deck();
@@ -30,14 +32,14 @@ public class Tests {
 		Card kingD = new Card(Value.KING, Suit.DIAMONDS);
 		Card aceD = new Card(Value.ACE, Suit.DIAMONDS);
 		List<Card> expected = new ArrayList<>();
-		expected.add(jackD);
-		expected.add(queenD);
-		expected.add(kingD);
 		expected.add(aceD);
+		expected.add(kingD);
+		expected.add(queenD);
+		expected.add(jackD);
 		
 		List<Card> actual = deck.draw(4);
 		for(int i=0; i<expected.size(); i++) {
-			assertEquals(expected.get(i),actual.get(i));
+			assertEquals(expected.get(i).toString(), actual.get(i).toString());
 		}
 	}
 }
