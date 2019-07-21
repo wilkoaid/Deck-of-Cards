@@ -22,7 +22,7 @@ public class Main {
 		}
 		System.out.println(i);
 		
-		List<Card> cards = deck.draw(60);
+		List<Card> cards = deck.draw(-60);
 		System.out.println(cards);
 		System.out.println(deck.sortCards(cards));
 	}

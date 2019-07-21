@@ -39,14 +39,12 @@ public class Deck {
 	
 	public List<Card> draw(int n) {
 		List<Card> cards = new ArrayList<>();
-		if(this.deck.size() < n) {
-			throw new IllegalArgumentException("Too few cards in deck to draw " + n);
-		} else {
-			for(int i=0; i<n; i++) {
+		for(int i=0; i<n; i++) {
+			if(this.deck.size() > 0) {
 				Card topCard = this.deck.remove(this.deck.size() - 1);
 				cards.add(topCard);
-			}			
-		}
+			}
+		}			
 		return cards;
 	}
 	

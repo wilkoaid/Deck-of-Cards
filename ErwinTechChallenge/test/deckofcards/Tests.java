@@ -80,9 +80,35 @@ public class Tests {
 		
 	}
 	
+	/*
+	 * test for negative input for draw method
+	 */
+	@Test
+	public void test4() {
+		Deck deck = new Deck();
+		List<Card> expected = new ArrayList<>();
+		List<Card> actual = deck.draw(-6);
+		assertEquals(expected,actual);
+	}
 	
-	
-	
+	/*
+	 * test for input parameter higher than number of cards in deck for draw method
+	 */
+	@Test
+	public void test5() {
+		Deck deck = new Deck();
+		deck.draw(50);  // empty most of the deck
+		Card oneC = new Card(Value.ONE, Suit.CLUBS);
+		Card twoC = new Card(Value.TWO, Suit.CLUBS);
+		List<Card> expected = new ArrayList<>();
+		expected.add(twoC);
+		expected.add(oneC);
+		List<Card> actual = deck.draw(20);
+		
+		for(int i=0; i<expected.size(); i++) {
+			assertEquals(expected.get(i).toString(), actual.get(i).toString());
+		}
+	}
 	
 	
 	
