@@ -20,5 +20,7 @@ public class Card {
 		return value;
 	}
 	
-	
+	public String toString() {
+		return this.value + " of " + this.suit;
+	}
 }
