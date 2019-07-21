@@ -1,5 +1,7 @@
 package deckofcards;
 
+import java.util.List;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -20,9 +22,9 @@ public class Main {
 		}
 		System.out.println(i);
 		
-		
-		System.out.println(deck.draw(4));
-		System.out.println(deck.drawSorted(10));
+		List<Card> cards = deck.draw(5);
+		System.out.println(cards);
+		System.out.println(deck.sortCards(cards));
 	}
 
 }

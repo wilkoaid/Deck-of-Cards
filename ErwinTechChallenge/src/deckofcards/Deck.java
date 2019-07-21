@@ -50,9 +50,7 @@ public class Deck {
 		return cards;
 	}
 	
-	public List<Card> drawSorted(int n) {
-		List<Card> cards = new ArrayList<>();
-		cards = draw(n);
+	public List<Card> sortCards(List<Card> cards) {
 		Collections.sort(cards, (o1,o2) -> {
 			if(o1.getSuit().getValue() > o2.getSuit().getValue()) {
 				return 1;
