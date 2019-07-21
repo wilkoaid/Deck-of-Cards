@@ -21,6 +21,15 @@ public class Deck {
 	public List<Card> getDeck() {
 		return deck;
 	}
+	
+	public void reset() {
+		this.deck.clear();
+		for(Suit suit : Suit.values()) {
+			for(Value value : Value.values()) {
+				this.deck.add(new Card(value, suit));
+			}
+		}
+	}
 
 	public void shuffleDeck() {
 		List<Card> shuffled = new ArrayList<>();

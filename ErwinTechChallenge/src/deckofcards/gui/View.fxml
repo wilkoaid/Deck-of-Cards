@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" type="BorderPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <AnchorPane prefHeight="66.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="227.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deck of Cards">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="shuffleButton" layoutX="59.0" layoutY="114.0" mnemonicParsing="false" text="Shuffle Deck" />
+            <Button fx:id="resetButton" layoutX="63.0" layoutY="159.0" mnemonicParsing="false" text="Reset Deck" />
+         </children>
+      </AnchorPane>
+   </left>
+   <bottom>
+      <AnchorPane prefHeight="81.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="quitButton" layoutX="281.0" layoutY="14.0" mnemonicParsing="false" text="Quit" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <right>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="numDrawField" layoutX="26.0" layoutY="149.0" promptText="Number of cards to draw" />
+            <Button fx:id="drawButton" layoutX="62.0" layoutY="114.0" mnemonicParsing="false" text="Draw Cards" />
+            <Button fx:id="sortButton" layoutX="46.0" layoutY="189.0" mnemonicParsing="false" text="Sort Drawn Cards" />
+         </children>
+      </AnchorPane>
+   </right>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="36.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deck:" />
+            <ListView fx:id="deckList" layoutY="50.0" prefHeight="180.0" prefWidth="100.0" />
+            <ListView fx:id="handList" layoutX="111.0" layoutY="50.0" prefHeight="180.0" prefWidth="100.0" />
+            <Text layoutX="145.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hand:" />
+         </children>
+      </AnchorPane>
+   </center>
+</fx:root>
