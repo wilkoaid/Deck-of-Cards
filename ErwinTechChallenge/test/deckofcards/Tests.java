@@ -42,4 +42,60 @@ public class Tests {
 			assertEquals(expected.get(i).toString(), actual.get(i).toString());
 		}
 	}
+	
+	/*
+	 * test the sort method
+	 */
+	@Test
+	public void test3() {
+		Deck deck = new Deck();
+		List<Card> cards = new ArrayList<>();
+		Card fourC = new Card(Value.FOUR, Suit.CLUBS);
+		cards.add(fourC);
+		Card oneC = new Card(Value.ONE, Suit.CLUBS);
+		cards.add(oneC);
+		Card twoC = new Card(Value.TWO, Suit.CLUBS);
+		cards.add(twoC);
+		Card jackH = new Card(Value.JACK, Suit.HEARTS);
+		cards.add(jackH);
+		Card queenS = new Card(Value.QUEEN, Suit.SPADES);
+		cards.add(queenS);
+		Card aceD = new Card(Value.ACE, Suit.DIAMONDS);
+		cards.add(aceD);
+		
+		List<Card> expected = new ArrayList<>();
+		expected.add(oneC);
+		expected.add(twoC);
+		expected.add(fourC);
+		expected.add(queenS);
+		expected.add(jackH);
+		expected.add(aceD);
+		
+		List<Card> actual = deck.sortCards(cards);
+		
+		for(int i=0; i<expected.size(); i++) {
+			assertEquals(expected.get(i).toString(), actual.get(i).toString());
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
